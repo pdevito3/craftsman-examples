@@ -1,0 +1,82 @@
+﻿SolutionName: CarbonKitchen.Api
+DbContext:
+ ContextName: CarbonKitchenDbContext
+ DatabaseName: CarbonKitchenDbContext
+ Provider: SqlServer
+Entities:
+  - Name: Recipe
+    Properties:
+    - Name: RecipeId
+      IsPrimaryKey: true
+      Type: int
+      CanFilter: true
+      CanSort: true
+    - Name: Title
+      Type: string
+      CanFilter: true
+      CanSort: true
+    - Name: Directions
+      Type: string
+      CanFilter: true
+      CanSort: true
+    - Name: RecipeSourceLink
+      Type: string
+      CanFilter: true
+      CanSort: true
+    - Name: Description
+      Type: string
+      CanFilter: true
+      CanSort: true
+    - Name: ImageLink
+      Type: string
+      CanFilter: true
+      CanSort: true
+Environments:
+  - EnvironmentName: Development
+    Authority: https://localhost:5010
+    Audience: recipes
+    AuthorizationUrl: https://localhost:5010/connect/authorize
+    TokenUrl: https://localhost:5010/connect/token
+    ClientId: swagger
+    ClientSecret: secret
+SwaggerConfig:
+  Title: MySwaggerDoc
+  Description: This is my swagger doc
+  SwaggerEndpointName: "v1"
+  AddSwaggerComments: true
+  ApiContact: 
+    Name: Paul
+    Email: paul@test.com
+    Url: https://www.thisispaulswebsite.com
+AuthorizationSettings:
+  Policies:
+    - Name: CanReadRecipes
+      PolicyType: scope
+      PolicyValue: recipes.read
+      EndpointEntities:
+        - EntityName: Recipe
+          RestrictedEndpoints:
+            - GetList
+            - GetRecord
+    - Name: CanAddRecipes
+      PolicyType: scope
+      PolicyValue: recipes.add
+      EndpointEntities:
+        - EntityName: Recipe
+          RestrictedEndpoints:
+            - AddRecord
+    - Name: CanDeleteRecipes
+      PolicyType: scope
+      PolicyValue: recipes.delete
+      EndpointEntities:
+        - EntityName: Recipe
+          RestrictedEndpoints:
+            - DeleteRecord
+    - Name: CanUpdateRecipes
+      PolicyType: scope
+      PolicyValue: recipes.update
+      EndpointEntities:
+        - EntityName: Recipe
+          RestrictedEndpoints:
+            - UpdateRecord
+            - UpdatePartial

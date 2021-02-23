@@ -1,0 +1,58 @@
+﻿SolutionName: Lab.Api
+DbContext:
+ ContextName: LabDbContext
+ DatabaseName: LabDbContext
+ Provider: SqlServer
+Entities:
+- Name: Patient
+  Properties:
+  - Name: PatientId
+    IsPrimaryKey: true
+    Type: int
+    CanFilter: true
+    CanSort: true
+  - Name: FirstName
+    Type: string
+    CanFilter: true
+    CanSort: true
+  - Name: LastName
+    Type: string
+    CanFilter: true
+    CanSort: true
+  - Name: Sex
+    Type: string
+    CanFilter: true
+    CanSort: true
+  - Name: Gender
+    Type: string
+    CanFilter: true
+    CanSort: true
+  - Name: Race
+    Type: string
+    CanFilter: true
+    CanSort: true
+  - Name: Ethnicity
+    Type: string
+    CanFilter: true
+    CanSort: true
+Environments:
+  - EnvironmentName: Development
+    Authority: https://localhost:5010
+  - EnvironmentName: Dev
+    ConnectionString: "Data Source=localhost\\SqlExpress;Initial Catalog=DevDb;Integrated Security=True;MultipleActiveResultSets=True"
+    ProfileName: Dev
+  - EnvironmentName: QA
+    ConnectionString: "Data Source=localhost\\SqlExpress;Initial Catalog=QaDb;Integrated Security=True;MultipleActiveResultSets=True"
+    ProfileName: QA
+  - EnvironmentName: Startup
+    ConnectionString: "Data Source=localhost\\SqlExpress;Initial Catalog=ProdDb;Integrated Security=True;MultipleActiveResultSets=True"
+    ProfileName: Prod
+SwaggerConfig:
+  Title: MySwaggerDoc
+  Description: This is my swagger doc
+  SwaggerEndpointName: "v1"
+  AddSwaggerComments: true
+  ApiContact: 
+    Name: Paul
+    Email: paul@test.com
+    Url: https://www.thisispaulswebsite.com

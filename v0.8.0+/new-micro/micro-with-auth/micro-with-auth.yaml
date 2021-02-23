@@ -1,0 +1,123 @@
+﻿SolutionName: MicroCarbonKitchenJwt
+Gateways:
+- GatewayProjectName: CarbonGateway
+  EnvironmentGateways:
+  - EnvironmentName: Development
+    ProfileName: Development
+    GatewayUrl: http://localhost:5050/
+    GatewayResources:
+    - GatewayRoute: /gateway/recipes
+      DownstreamEntityName: recipe
+  - EnvironmentName: QA
+    ProfileName: QA
+    GatewayUrl: http://localhost:5050/
+    GatewayResources:
+    - GatewayRoute: /gateway/recipes
+      DownstreamEntityName: recipe
+  - EnvironmentName: Startup
+    ProfileName: Prod
+    GatewayUrl: http://localhost:5050/
+    GatewayResources:
+    - GatewayRoute: /gateway/recipes
+      DownstreamEntityName: recipe
+Microservices:
+- ProjectFolderName: Recipes
+  Port: 5467
+  DbContext:
+    ContextName: RecipeDbContext
+    DatabaseName: Recipe
+    Provider: SqlServer
+  Entities:
+  - Name: Recipe
+    Properties:
+    - Name: RecipeId
+      IsPrimaryKey: true
+      Type: int
+      CanFilter: true
+      CanSort: true
+    - Name: Title
+      Type: string
+      CanFilter: true
+      CanSort: true
+    - Name: Directions
+      Type: string
+      CanFilter: true
+      CanSort: true
+    - Name: RecipeSourceLink
+      Type: string
+      CanFilter: true
+      CanSort: true
+    - Name: Description
+      Type: string
+      CanFilter: true
+      CanSort: true
+    - Name: ImageLink
+      Type: string
+      CanFilter: true
+      CanSort: true
+  SwaggerConfig:
+    Title: CarbonKitchen Recipe
+    Description: Our API uses a REST based design, leverages the JSON data format, and relies upon HTTPS for transport. We respond with meaningful HTTP response codes and if an error occurs, we include error details in the response body. API Documentation is at CarbonKitchen.com/dev/docs
+    AddSwaggerComments: true
+    ApiContact: 
+      Name: CarbonKitchen Recipe
+      Email: devsupport@CarbonKitchen.com
+      Url: https://www.CarbonKitchen.com
+  Environments:
+  - EnvironmentName: QA
+    ConnectionString: "Data Source=localhost\\SqlExpress;Initial Catalog=QaDb;Integrated Security=True;MultipleActiveResultSets=True"
+    ProfileName: QA
+    Authority: https://localhost:5010
+    Audience: recipes
+    AuthorizationUrl: https://localhost:5010/connect/authorize
+    TokenUrl: https://localhost:5010/connect/token
+    ClientId: swagger
+    ClientSecret: secret
+  - EnvironmentName: Development
+    Authority: https://localhost:5010
+    Audience: recipes
+    AuthorizationUrl: https://localhost:5010/connect/authorize
+    TokenUrl: https://localhost:5010/connect/token
+    ClientId: swagger
+    ClientSecret: secret
+  - EnvironmentName: Prod
+    ConnectionString: "Data Source=localhost\\SqlExpress;Initial Catalog=ProdDb;Integrated Security=True;MultipleActiveResultSets=True"
+    ProfileName: Prod
+    Authority: https://localhost:5010
+    Audience: recipes
+    AuthorizationUrl: https://localhost:5010/connect/authorize
+    TokenUrl: https://localhost:5010/connect/token
+    ClientId: swagger
+    ClientSecret: secret
+  AuthorizationSettings:
+    Policies:
+      - Name: CanReadRecipes
+        PolicyType: scope
+        PolicyValue: recipes.read
+        EndpointEntities:
+          - EntityName: Recipe
+            RestrictedEndpoints:
+              - GetList
+              - GetRecord
+      - Name: CanAddRecipes
+        PolicyType: scope
+        PolicyValue: recipes.add
+        EndpointEntities:
+          - EntityName: Recipe
+            RestrictedEndpoints:
+              - AddRecord
+      - Name: CanDeleteRecipes
+        PolicyType: scope
+        PolicyValue: recipes.delete
+        EndpointEntities:
+          - EntityName: Recipe
+            RestrictedEndpoints:
+              - DeleteRecord
+      - Name: CanUpdateRecipes
+        PolicyType: scope
+        PolicyValue: recipes.update
+        EndpointEntities:
+          - EntityName: Recipe
+            RestrictedEndpoints:
+              - UpdateRecord
+              - UpdatePartial

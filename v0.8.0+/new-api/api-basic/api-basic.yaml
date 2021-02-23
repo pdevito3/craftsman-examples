@@ -1,0 +1,63 @@
+﻿SolutionName: Lab.Api
+DbContext:
+ ContextName: LabDbContext
+ DatabaseName: LabDbContext
+ Provider: SqlServer
+Entities:
+- Name: Patient
+  Properties:
+  - Name: PatientId
+    IsPrimaryKey: true
+    Type: int
+    CanFilter: true
+    CanSort: true
+  - Name: FirstName
+    Type: string
+    CanFilter: true
+    CanSort: true
+  - Name: LastName
+    Type: string
+    CanFilter: true
+    CanSort: true
+  - Name: Sex
+    Type: string
+    CanFilter: true
+    CanSort: true
+  - Name: Gender
+    Type: string
+    CanFilter: true
+    CanSort: true
+  - Name: Race
+    Type: string
+    CanFilter: true
+    CanSort: true
+  - Name: Ethnicity
+    Type: string
+    CanFilter: true
+    CanSort: true
+- Name: SampleContainer
+  Properties:
+  - Name: SampleContainerId
+    IsPrimaryKey: true
+    Type: int
+    CanFilter: true
+    CanSort: true
+  - Name: ContainerId
+    Type: string
+    CanFilter: true
+    CanSort: true
+  - Name: ParentContainerId
+    Type: int
+    CanFilter: true
+    CanSort: true
+  - Name: SampleType
+    Type: int
+    CanFilter: true
+    CanSort: true
+  - Name: ContainerType
+    Type: datetime?
+    CanFilter: true
+    CanSort: true
+  - Name: Patient
+    Type: Patient
+    ForeignKeyPropName: PatientId
