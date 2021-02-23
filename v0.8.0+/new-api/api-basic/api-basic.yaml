@@ -35,29 +35,3 @@ Entities:
     Type: string
     CanFilter: true
     CanSort: true
-- Name: SampleContainer
-  Properties:
-  - Name: SampleContainerId
-    IsPrimaryKey: true
-    Type: int
-    CanFilter: true
-    CanSort: true
-  - Name: ContainerId
-    Type: string
-    CanFilter: true
-    CanSort: true
-  - Name: ParentContainerId
-    Type: int
-    CanFilter: true
-    CanSort: true
-  - Name: SampleType
-    Type: int
-    CanFilter: true
-    CanSort: true
-  - Name: ContainerType
-    Type: datetime?
-    CanFilter: true
-    CanSort: true
-  - Name: Patient
-    Type: Patient
-    ForeignKeyPropName: PatientId
