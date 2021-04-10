@@ -1,0 +1,107 @@
+BoundedContexts:
+- SolutionName: Billing
+  Port: 1201
+  DbContext:
+   ContextName: BillingDbContext
+   DatabaseName: BillingDbContext
+   Provider: Postgres
+  Entities:
+  - Name: Patient
+    Properties:
+    - Name: PatientId
+      IsPrimaryKey: true
+      Type: guid
+      CanFilter: true
+      CanSort: true
+    - Name: ExternalId
+      Type: string
+      CanFilter: true
+      CanSort: true
+    - Name: InternalId
+      Type: string
+      CanFilter: true
+      CanSort: true
+    - Name: FirstName
+      Type: string
+      CanFilter: true
+      CanSort: true
+    - Name: LastName
+      Type: string
+      CanFilter: true
+      CanSort: true
+    - Name: Dob
+      Type: datetimeoffset?
+      CanFilter: true
+      CanSort: true
+    - Name: Sex
+      Type: string
+      CanFilter: true
+      CanSort: true
+    - Name: Gender
+      Type: string
+      CanFilter: true
+      CanSort: true
+    - Name: Race
+      Type: string
+      CanFilter: true
+      CanSort: true
+    - Name: Ethnicity
+      Type: string
+      CanFilter: true
+      CanSort: true
+  Environments:
+    - EnvironmentName: Development
+      Authority: https://localhost:5010
+      Audience: patients
+      AuthorizationUrl: https://localhost:5010/connect/authorize
+      TokenUrl: https://localhost:5010/connect/token
+      ClientId: swagger
+    - EnvironmentName: Production
+      ConnectionString: "Data Source=localhost,55370;Integrated Security=False;User ID=SA;Password=#testingDockerPassword#"
+      ProfileName: Prod
+      Authority: https://localhost:5010
+      Audience: patients
+      AuthorizationUrl: https://localhost:5010/connect/authorize
+      TokenUrl: https://localhost:5010/connect/token
+      ClientId: swagger
+  SwaggerConfig:
+    Title: MySwaggerDoc
+    Description: This is my swagger doc
+    SwaggerEndpointName: "v1"
+    AddSwaggerComments: true
+    ApiContact: 
+      Name: Paul
+      Email: paul@test.com
+      Url: https://www.thisispaulswebsite.com
+  AuthorizationSettings:
+    Policies:
+      - Name: CanReadPatients
+        PolicyType: scope
+        PolicyValue: patients.read
+        EndpointEntities:
+          - EntityName: Patient
+            RestrictedEndpoints:
+              - GetList
+              - GetRecord
+      - Name: CanAddPatients
+        PolicyType: scope
+        PolicyValue: patients.add
+        EndpointEntities:
+          - EntityName: Patient
+            RestrictedEndpoints:
+              - AddRecord
+      - Name: CanDeletePatients
+        PolicyType: scope
+        PolicyValue: patients.delete
+        EndpointEntities:
+          - EntityName: Patient
+            RestrictedEndpoints:
+              - DeleteRecord
+      - Name: CanUpdatePatients
+        PolicyType: scope
+        PolicyValue: patients.update
+        EndpointEntities:
+          - EntityName: Patient
+            RestrictedEndpoints:
+              - UpdateRecord
+              - UpdatePartial

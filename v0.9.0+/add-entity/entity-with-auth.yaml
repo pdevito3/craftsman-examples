@@ -1,60 +1,49 @@
-﻿Entities:
-  - Name: Recipe
-    Properties:
-    - Name: RecipeId
-      IsPrimaryKey: true
-      Type: int
-      CanFilter: true
-      CanSort: true
-    - Name: Title
-      Type: string
-      CanFilter: true
-      CanSort: true
-    - Name: Directions
-      Type: string
-      CanFilter: true
-      CanSort: true
-    - Name: RecipeSourceLink
-      Type: string
-      CanFilter: true
-      CanSort: true
-    - Name: Description
-      Type: string
-      CanFilter: true
-      CanSort: true
-    - Name: ImageLink
-      Type: string
-      CanFilter: true
-      CanSort: true
+AddSwaggerComments: true
+Entities:
+- Name: Container
+  Properties:
+  - Name: ContainerId
+    IsPrimaryKey: true
+    Type: guid
+    CanFilter: true
+    CanSort: true
+  - Name: Type
+    Type: string
+    CanFilter: true
+    CanSort: true
+  - Name: Size
+    Type: string
+    CanFilter: true
+    CanSort: true
 AuthorizationSettings:
   Policies:
-    - Name: CanReadRecipes
+    - Name: CanReadContainers
       PolicyType: scope
-      PolicyValue: recipes.read
+      PolicyValue: containers.read
       EndpointEntities:
-        - EntityName: Recipe
+        - EntityName: Container
           RestrictedEndpoints:
             - GetList
             - GetRecord
-    - Name: CanAddRecipes
+    - Name: CanAddContainers
       PolicyType: scope
-      PolicyValue: recipes.add
+      PolicyValue: containers.add
       EndpointEntities:
-        - EntityName: Recipe
+        - EntityName: Container
           RestrictedEndpoints:
             - AddRecord
-    - Name: CanDeleteRecipes
+    - Name: CanDeleteContainers
       PolicyType: scope
-      PolicyValue: recipes.delete
+      PolicyValue: containers.delete
       EndpointEntities:
-        - EntityName: Recipe
+        - EntityName: Container
           RestrictedEndpoints:
             - DeleteRecord
-    - Name: CanUpdateRecipes
+    - Name: CanUpdateContainers
       PolicyType: scope
-      PolicyValue: recipes.update
+      PolicyValue: containers.update
       EndpointEntities:
-        - EntityName: Recipe
+        - EntityName: Container
           RestrictedEndpoints:
             - UpdateRecord
             - UpdatePartial
