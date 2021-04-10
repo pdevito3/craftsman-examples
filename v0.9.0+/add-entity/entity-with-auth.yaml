@@ -1,0 +1,60 @@
+﻿Entities:
+  - Name: Recipe
+    Properties:
+    - Name: RecipeId
+      IsPrimaryKey: true
+      Type: int
+      CanFilter: true
+      CanSort: true
+    - Name: Title
+      Type: string
+      CanFilter: true
+      CanSort: true
+    - Name: Directions
+      Type: string
+      CanFilter: true
+      CanSort: true
+    - Name: RecipeSourceLink
+      Type: string
+      CanFilter: true
+      CanSort: true
+    - Name: Description
+      Type: string
+      CanFilter: true
+      CanSort: true
+    - Name: ImageLink
+      Type: string
+      CanFilter: true
+      CanSort: true
+AuthorizationSettings:
+  Policies:
+    - Name: CanReadRecipes
+      PolicyType: scope
+      PolicyValue: recipes.read
+      EndpointEntities:
+        - EntityName: Recipe
+          RestrictedEndpoints:
+            - GetList
+            - GetRecord
+    - Name: CanAddRecipes
+      PolicyType: scope
+      PolicyValue: recipes.add
+      EndpointEntities:
+        - EntityName: Recipe
+          RestrictedEndpoints:
+            - AddRecord
+    - Name: CanDeleteRecipes
+      PolicyType: scope
+      PolicyValue: recipes.delete
+      EndpointEntities:
+        - EntityName: Recipe
+          RestrictedEndpoints:
+            - DeleteRecord
+    - Name: CanUpdateRecipes
+      PolicyType: scope
+      PolicyValue: recipes.update
+      EndpointEntities:
+        - EntityName: Recipe
+          RestrictedEndpoints:
+            - UpdateRecord
+            - UpdatePartial

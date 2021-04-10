@@ -1,0 +1,28 @@
+﻿Entities:
+- Name: Recipe
+  Properties:
+  - Name: RecipeId
+    IsPrimaryKey: true
+    Type: Guid
+    CanFilter: true
+    CanSort: true
+  - Name: Title
+    Type: string
+    CanFilter: true
+    CanSort: true
+  - Name: Directions
+    Type: string
+    CanFilter: true
+    CanSort: true
+  - Name: RecipeSourceLink
+    Type: string
+    CanFilter: true
+    CanSort: true
+  - Name: Description
+    Type: string
+    CanFilter: true
+    CanSort: true
+  - Name: ImageSourceLink
+    Type: string
+    CanFilter: true
+    CanSort: true

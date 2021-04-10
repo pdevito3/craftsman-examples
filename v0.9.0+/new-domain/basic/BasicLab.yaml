@@ -1,0 +1,100 @@
+DomainName: 
+BoundedContexts:
+- SolutionName: Ordering
+  Port: 1200
+  DbContext:
+   ContextName: OrderingDbContext
+   DatabaseName: OrderingDbContext
+   Provider: SqlServer
+  Entities:
+  - Name: Patient
+    Properties:
+    - Name: PatientId
+      IsPrimaryKey: true
+      Type: guid
+      CanFilter: true
+      CanSort: true
+    - Name: ExternalId
+      Type: string
+      CanFilter: true
+      CanSort: true
+    - Name: InternalId
+      Type: string
+      CanFilter: true
+      CanSort: true
+    - Name: FirstName
+      Type: string
+      CanFilter: true
+      CanSort: true
+    - Name: LastName
+      Type: string
+      CanFilter: true
+      CanSort: true
+    - Name: Dob
+      Type: datetimeoffset?
+      CanFilter: true
+      CanSort: true
+    - Name: Sex
+      Type: string
+      CanFilter: true
+      CanSort: true
+    - Name: Gender
+      Type: string
+      CanFilter: true
+      CanSort: true
+    - Name: Race
+      Type: string
+      CanFilter: true
+      CanSort: true
+    - Name: Ethnicity
+      Type: string
+      CanFilter: true
+      CanSort: true
+  - Name: Sample
+    Properties:
+    - Name: SampleId
+      IsPrimaryKey: true
+      Type: guid
+      CanFilter: true
+      CanSort: true
+    - Name: ExternalId
+      Type: string
+      CanFilter: true
+      CanSort: true
+    - Name: InternalId
+      Type: string
+      CanFilter: true
+      CanSort: true
+    - Name: SampleType
+      Type: string
+      CanFilter: true
+      CanSort: true
+    - Name: ContainerType
+      Type: string
+      CanFilter: true
+      CanSort: true
+    - Name: CollectionDate
+      Type: datetimeoffset?
+      CanFilter: true
+      CanSort: true
+    - Name: ArrivalDate
+      Type: datetimeoffset?
+      CanFilter: true
+      CanSort: true
+    - Name: Amount
+      Type: int?
+      CanFilter: true
+      CanSort: true
+    - Name: AmountUnits
+      Type: string
+      CanFilter: true
+      CanSort: true
+  SwaggerConfig:
+    Title: MySwaggerDoc
+    Description: This is my swagger doc
+    SwaggerEndpointName: "v1"
+    AddSwaggerComments: true
+    ApiContact: 
+      Name: Paul
+      Email: paul@test.com
+      Url: https://www.thisispaulswebsite.com
