@@ -138,10 +138,10 @@ namespace Ordering.WebApi.Controllers.v1
         /// <summary>
         /// Deletes an existing Patient record.
         /// </summary>
-        /// <response code="201">Patient deleted.</response>
+        /// <response code="204">Patient deleted.</response>
         /// <response code="400">Patient has missing/invalid values.</response>
         /// <response code="500">There was an error on the server while creating the Patient.</response>
-        [ProducesResponseType(201)]
+        [ProducesResponseType(204)]
         [ProducesResponseType(typeof(ValidationProblemDetails), 400)]
         [ProducesResponseType(500)]
         [Produces("application/json")]
@@ -158,10 +158,10 @@ namespace Ordering.WebApi.Controllers.v1
         /// <summary>
         /// Updates an entire existing Patient.
         /// </summary>
-        /// <response code="201">Patient updated.</response>
+        /// <response code="204">Patient updated.</response>
         /// <response code="400">Patient has missing/invalid values.</response>
         /// <response code="500">There was an error on the server while creating the Patient.</response>
-        [ProducesResponseType(201)]
+        [ProducesResponseType(204)]
         [ProducesResponseType(typeof(ValidationProblemDetails), 400)]
         [ProducesResponseType(500)]
         [Produces("application/json")]
@@ -178,10 +178,10 @@ namespace Ordering.WebApi.Controllers.v1
         /// <summary>
         /// Updates specific properties on an existing Patient.
         /// </summary>
-        /// <response code="201">Patient updated.</response>
+        /// <response code="204">Patient updated.</response>
         /// <response code="400">Patient has missing/invalid values.</response>
         /// <response code="500">There was an error on the server while creating the Patient.</response>
-        [ProducesResponseType(201)]
+        [ProducesResponseType(204)]
         [ProducesResponseType(typeof(ValidationProblemDetails), 400)]
         [ProducesResponseType(500)]
         [Consumes("application/json")]

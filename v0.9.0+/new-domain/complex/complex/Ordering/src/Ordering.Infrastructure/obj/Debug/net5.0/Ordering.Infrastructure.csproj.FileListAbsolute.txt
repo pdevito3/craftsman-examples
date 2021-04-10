@@ -1,0 +1,15 @@
+C:\Users\Paul\Documents\repos\craftsman-examples\v0.9.0+\new-domain\complex\complex\Ordering\src\Ordering.Infrastructure\bin\Debug\net5.0\Ordering.Infrastructure.deps.json
+C:\Users\Paul\Documents\repos\craftsman-examples\v0.9.0+\new-domain\complex\complex\Ordering\src\Ordering.Infrastructure\bin\Debug\net5.0\Ordering.Infrastructure.dll
+C:\Users\Paul\Documents\repos\craftsman-examples\v0.9.0+\new-domain\complex\complex\Ordering\src\Ordering.Infrastructure\bin\Debug\net5.0\ref\Ordering.Infrastructure.dll
+C:\Users\Paul\Documents\repos\craftsman-examples\v0.9.0+\new-domain\complex\complex\Ordering\src\Ordering.Infrastructure\bin\Debug\net5.0\Ordering.Infrastructure.pdb
+C:\Users\Paul\Documents\repos\craftsman-examples\v0.9.0+\new-domain\complex\complex\Ordering\src\Ordering.Infrastructure\bin\Debug\net5.0\Ordering.Core.dll
+C:\Users\Paul\Documents\repos\craftsman-examples\v0.9.0+\new-domain\complex\complex\Ordering\src\Ordering.Infrastructure\bin\Debug\net5.0\Ordering.Core.pdb
+C:\Users\Paul\Documents\repos\craftsman-examples\v0.9.0+\new-domain\complex\complex\Ordering\src\Ordering.Infrastructure\obj\Debug\net5.0\Ordering.Infrastructure.csprojAssemblyReference.cache
+C:\Users\Paul\Documents\repos\craftsman-examples\v0.9.0+\new-domain\complex\complex\Ordering\src\Ordering.Infrastructure\obj\Debug\net5.0\Ordering.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Paul\Documents\repos\craftsman-examples\v0.9.0+\new-domain\complex\complex\Ordering\src\Ordering.Infrastructure\obj\Debug\net5.0\Ordering.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\Paul\Documents\repos\craftsman-examples\v0.9.0+\new-domain\complex\complex\Ordering\src\Ordering.Infrastructure\obj\Debug\net5.0\Ordering.Infrastructure.AssemblyInfo.cs
+C:\Users\Paul\Documents\repos\craftsman-examples\v0.9.0+\new-domain\complex\complex\Ordering\src\Ordering.Infrastructure\obj\Debug\net5.0\Ordering.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Paul\Documents\repos\craftsman-examples\v0.9.0+\new-domain\complex\complex\Ordering\src\Ordering.Infrastructure\obj\Debug\net5.0\Ordering.Infrastructure.csproj.CopyComplete
+C:\Users\Paul\Documents\repos\craftsman-examples\v0.9.0+\new-domain\complex\complex\Ordering\src\Ordering.Infrastructure\obj\Debug\net5.0\Ordering.Infrastructure.dll
+C:\Users\Paul\Documents\repos\craftsman-examples\v0.9.0+\new-domain\complex\complex\Ordering\src\Ordering.Infrastructure\obj\Debug\net5.0\ref\Ordering.Infrastructure.dll
+C:\Users\Paul\Documents\repos\craftsman-examples\v0.9.0+\new-domain\complex\complex\Ordering\src\Ordering.Infrastructure\obj\Debug\net5.0\Ordering.Infrastructure.pdb

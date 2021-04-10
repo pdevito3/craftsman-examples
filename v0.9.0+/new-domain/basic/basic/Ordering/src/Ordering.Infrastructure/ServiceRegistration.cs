@@ -1,6 +1,7 @@
 namespace Ordering.Infrastructure
 {
     using Ordering.Infrastructure.Contexts;
+    using Microsoft.AspNetCore.Hosting;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;

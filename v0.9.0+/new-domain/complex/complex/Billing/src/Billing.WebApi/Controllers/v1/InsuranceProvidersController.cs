@@ -138,10 +138,10 @@ namespace Billing.WebApi.Controllers.v1
         /// <summary>
         /// Deletes an existing InsuranceProvider record.
         /// </summary>
-        /// <response code="201">InsuranceProvider deleted.</response>
+        /// <response code="204">InsuranceProvider deleted.</response>
         /// <response code="400">InsuranceProvider has missing/invalid values.</response>
         /// <response code="500">There was an error on the server while creating the InsuranceProvider.</response>
-        [ProducesResponseType(201)]
+        [ProducesResponseType(204)]
         [ProducesResponseType(typeof(ValidationProblemDetails), 400)]
         [ProducesResponseType(500)]
         [Produces("application/json")]
@@ -158,10 +158,10 @@ namespace Billing.WebApi.Controllers.v1
         /// <summary>
         /// Updates an entire existing InsuranceProvider.
         /// </summary>
-        /// <response code="201">InsuranceProvider updated.</response>
+        /// <response code="204">InsuranceProvider updated.</response>
         /// <response code="400">InsuranceProvider has missing/invalid values.</response>
         /// <response code="500">There was an error on the server while creating the InsuranceProvider.</response>
-        [ProducesResponseType(201)]
+        [ProducesResponseType(204)]
         [ProducesResponseType(typeof(ValidationProblemDetails), 400)]
         [ProducesResponseType(500)]
         [Produces("application/json")]
@@ -178,10 +178,10 @@ namespace Billing.WebApi.Controllers.v1
         /// <summary>
         /// Updates specific properties on an existing InsuranceProvider.
         /// </summary>
-        /// <response code="201">InsuranceProvider updated.</response>
+        /// <response code="204">InsuranceProvider updated.</response>
         /// <response code="400">InsuranceProvider has missing/invalid values.</response>
         /// <response code="500">There was an error on the server while creating the InsuranceProvider.</response>
-        [ProducesResponseType(201)]
+        [ProducesResponseType(204)]
         [ProducesResponseType(typeof(ValidationProblemDetails), 400)]
         [ProducesResponseType(500)]
         [Consumes("application/json")]
