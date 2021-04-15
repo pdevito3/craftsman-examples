@@ -1,0 +1,49 @@
+AddSwaggerComments: true
+Entities:
+- Name: Container
+  Properties:
+  - Name: ContainerId
+    IsPrimaryKey: true
+    Type: guid
+    CanFilter: true
+    CanSort: true
+  - Name: Type
+    Type: string
+    CanFilter: true
+    CanSort: true
+  - Name: Size
+    Type: string
+    CanFilter: true
+    CanSort: true
+AuthorizationSettings:
+  Policies:
+    - Name: CanReadContainers
+      PolicyType: scope
+      PolicyValue: containers.read
+      EndpointEntities:
+        - EntityName: Container
+          RestrictedEndpoints:
+            - GetList
+            - GetRecord
+    - Name: CanAddContainers
+      PolicyType: scope
+      PolicyValue: containers.add
+      EndpointEntities:
+        - EntityName: Container
+          RestrictedEndpoints:
+            - AddRecord
+    - Name: CanDeleteContainers
+      PolicyType: scope
+      PolicyValue: containers.delete
+      EndpointEntities:
+        - EntityName: Container
+          RestrictedEndpoints:
+            - DeleteRecord
+    - Name: CanUpdateContainers
+      PolicyType: scope
+      PolicyValue: containers.update
+      EndpointEntities:
+        - EntityName: Container
+          RestrictedEndpoints:
+            - UpdateRecord
+            - UpdatePartial
