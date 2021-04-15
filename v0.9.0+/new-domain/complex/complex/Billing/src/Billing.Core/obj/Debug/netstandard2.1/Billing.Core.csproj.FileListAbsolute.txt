@@ -1,8 +1,0 @@
-C:\Users\Paul\Documents\repos\craftsman-examples\v0.9.0+\new-domain\complex\complex\Billing\src\Billing.Core\bin\Debug\netstandard2.1\Billing.Core.deps.json
-C:\Users\Paul\Documents\repos\craftsman-examples\v0.9.0+\new-domain\complex\complex\Billing\src\Billing.Core\bin\Debug\netstandard2.1\Billing.Core.dll
-C:\Users\Paul\Documents\repos\craftsman-examples\v0.9.0+\new-domain\complex\complex\Billing\src\Billing.Core\bin\Debug\netstandard2.1\Billing.Core.pdb
-C:\Users\Paul\Documents\repos\craftsman-examples\v0.9.0+\new-domain\complex\complex\Billing\src\Billing.Core\obj\Debug\netstandard2.1\Billing.Core.AssemblyInfoInputs.cache
-C:\Users\Paul\Documents\repos\craftsman-examples\v0.9.0+\new-domain\complex\complex\Billing\src\Billing.Core\obj\Debug\netstandard2.1\Billing.Core.AssemblyInfo.cs
-C:\Users\Paul\Documents\repos\craftsman-examples\v0.9.0+\new-domain\complex\complex\Billing\src\Billing.Core\obj\Debug\netstandard2.1\Billing.Core.csproj.CoreCompileInputs.cache
-C:\Users\Paul\Documents\repos\craftsman-examples\v0.9.0+\new-domain\complex\complex\Billing\src\Billing.Core\obj\Debug\netstandard2.1\Billing.Core.dll
-C:\Users\Paul\Documents\repos\craftsman-examples\v0.9.0+\new-domain\complex\complex\Billing\src\Billing.Core\obj\Debug\netstandard2.1\Billing.Core.pdb

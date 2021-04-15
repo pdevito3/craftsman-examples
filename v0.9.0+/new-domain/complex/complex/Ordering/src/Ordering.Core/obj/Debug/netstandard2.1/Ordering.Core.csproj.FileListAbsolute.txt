@@ -1,8 +1,0 @@
-C:\Users\Paul\Documents\repos\craftsman-examples\v0.9.0+\new-domain\complex\complex\Ordering\src\Ordering.Core\bin\Debug\netstandard2.1\Ordering.Core.deps.json
-C:\Users\Paul\Documents\repos\craftsman-examples\v0.9.0+\new-domain\complex\complex\Ordering\src\Ordering.Core\bin\Debug\netstandard2.1\Ordering.Core.dll
-C:\Users\Paul\Documents\repos\craftsman-examples\v0.9.0+\new-domain\complex\complex\Ordering\src\Ordering.Core\bin\Debug\netstandard2.1\Ordering.Core.pdb
-C:\Users\Paul\Documents\repos\craftsman-examples\v0.9.0+\new-domain\complex\complex\Ordering\src\Ordering.Core\obj\Debug\netstandard2.1\Ordering.Core.AssemblyInfoInputs.cache
-C:\Users\Paul\Documents\repos\craftsman-examples\v0.9.0+\new-domain\complex\complex\Ordering\src\Ordering.Core\obj\Debug\netstandard2.1\Ordering.Core.AssemblyInfo.cs
-C:\Users\Paul\Documents\repos\craftsman-examples\v0.9.0+\new-domain\complex\complex\Ordering\src\Ordering.Core\obj\Debug\netstandard2.1\Ordering.Core.csproj.CoreCompileInputs.cache
-C:\Users\Paul\Documents\repos\craftsman-examples\v0.9.0+\new-domain\complex\complex\Ordering\src\Ordering.Core\obj\Debug\netstandard2.1\Ordering.Core.dll
-C:\Users\Paul\Documents\repos\craftsman-examples\v0.9.0+\new-domain\complex\complex\Ordering\src\Ordering.Core\obj\Debug\netstandard2.1\Ordering.Core.pdb
