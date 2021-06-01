@@ -1,0 +1,100 @@
+DomainName: WeSendReportsCompanyWithBusWithAuth
+Messages:
+- Name: ISendReportRequest
+  Properties:
+  - Name: ReportId
+    Type: guid
+  - Name: Provider
+    Type: string
+  - Name: Target
+    Type: string
+BoundedContexts:
+- SolutionName: Reporting
+  Port: 1200
+  DbContext:
+   ContextName: ReportingDbContext 
+   DatabaseName: ReportingDbContext 
+   Provider: SqlServer
+  Entities:
+  - Name: ReportRequest
+    Properties:
+    - Name: ReportId
+      IsPrimaryKey: true
+      Type: guid
+      CanFilter: true
+      CanSort: true
+    - Name: Provider
+      Type: string
+      CanFilter: true
+      CanSort: true
+    - Name: Target
+      Type: string
+      CanFilter: true
+      CanSort: true
+  SwaggerConfig:
+    Title: Reporting Swagger Doc
+    Description: Swagger doc for reporting
+    SwaggerEndpointName: "v1"
+    AddSwaggerComments: true
+  Environments:
+  - EnvironmentName: Development
+    Authority: https://localhost:5010
+    Audience: patients
+    AuthorizationUrl: https://localhost:5010/connect/authorize
+    TokenUrl: https://localhost:5010/connect/token
+    ClientId: swagger
+    BrokerSettings:
+      Host: localhost
+      VirtualHost: /
+      Username: guest
+      Password: guest
+  - EnvironmentName: Production
+    BrokerSettings:
+      Host: rmqlocalprod
+      VirtualHost: dashprod
+      Username: testprod
+      Password: testprod
+  AuthorizationSettings:
+    Policies:
+      - Name: CanDeleteReportRequest
+        PolicyType: scope
+        PolicyValue: reportrequest.delete
+        EndpointEntities:
+          - EntityName: ReportRequest
+            RestrictedEndpoints:
+              - DeleteRecord
+  Bus:
+    AddBus: true
+  Producers:
+  - EndpointRegistrationMethodName: EmailRequestor
+    ExchangeName: report-requests
+    MessageName: ISendReportRequest
+    ExchangeType: direct
+    ProducerName: EmailWasRequested
+    UsesDb: true
+  Consumers:
+  - EndpointRegistrationMethodName: EmailReportsEndpoint
+    ConsumerName: SendRequestedEmail
+    ExchangeName: report-requests
+    MessageName: ISendReportRequest
+    QueueName: email-reports
+    ExchangeType: direct
+    RoutingKey: email
+    UsesDb: true
+  - EndpointRegistrationMethodName: FaxReportsEndpoint
+    ConsumerName: SendRequestedFax
+    ExchangeName: report-requests
+    MessageName: ISendReportRequest
+    QueueName: fax-reports
+    ExchangeType: direct
+    RoutingKey: fax
+    IsLazy: false
+    IsQuorum: false
+    UsesDb: false
+    # topic might look like thise, but this would cause two exchange types on the same exchange 
+  # - EndpointRegistrationMethodName: CloudReportsEndpoint
+  #   ConsumerName: CloudConsumer
+  #   ExchangeName: report-requests
+  #   QueueName: cloud-reports
+  #   ExchangeType: topic
+  #   RoutingKey: public.*

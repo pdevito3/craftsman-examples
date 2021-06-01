@@ -1,0 +1,13 @@
+Environments:
+  - EnvironmentName: Development
+    BrokerSettings:
+      Host: rmqlocal
+      VirtualHost: dash
+      Username: test
+      Password: test
+  - EnvironmentName: Production
+    BrokerSettings:
+      Host: rmqlocalprod
+      VirtualHost: dashprod
+      Username: testprod
+      Password: testprod

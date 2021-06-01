@@ -1,0 +1,24 @@
+Consumers:
+- EndpointRegistrationMethodName: EmailReportsEndpoint
+  MessageName: ITesting
+  ConsumerName: EmailConsumer
+  ExchangeName: report-requests
+  QueueName: email-reports
+  ExchangeType: direct
+  RoutingKey: email
+- EndpointRegistrationMethodName: FaxReportsEndpoint
+  ConsumerName: FaxConsumer
+  MessageName: ITesting
+  ExchangeName: report-requests
+  QueueName: fax-reports
+  ExchangeType: direct
+  RoutingKey: fax
+  IsLazy: false
+  IsQuorum: false
+- EndpointRegistrationMethodName: CloudReportsEndpoint
+  ConsumerName: CloudConsumer
+  MessageName: ITesting
+  ExchangeName: report-requests
+  QueueName: cloud-reports
+  ExchangeType: topic
+  RoutingKey: public.*

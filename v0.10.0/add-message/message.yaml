@@ -1,0 +1,7 @@
+Messages:
+- Name: ITesting
+  Properties:
+  - Name: testingId
+    Type: guid
+  - Name: hasdef
+    Type: string

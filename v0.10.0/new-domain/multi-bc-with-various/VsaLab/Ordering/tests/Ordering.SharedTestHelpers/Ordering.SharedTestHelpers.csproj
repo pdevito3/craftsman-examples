@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoBogus" Version="2.13.0" />
+    <PackageReference Include="Bogus" Version="33.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Ordering.Core\Ordering.Core.csproj" />
+  </ItemGroup>
+
+</Project>
